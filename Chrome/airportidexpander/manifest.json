@@ -1,0 +1,51 @@
+{
+  "manifest_version": 2,
+  "name": "Airport ID Expander",
+  "description": "Inserts info popups about airport identifiers found on web pages",
+  "version": "2.2",
+
+  "background": {
+    "persistent": false,
+    "scripts": ["js/background.js"]
+  },
+
+  "icons": {
+    "16": "img/icon-16.png",
+    "48": "img/icon-48.png",
+    "128": "img/icon-128.png"
+  },
+
+  "content_scripts" : [
+    {
+      "matches" : [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js" : ["js/xpathUtils.js","js/contentscript.js"],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    },
+    {
+      "matches" : [
+        "http://skyvector.com/*"
+      ],
+      "js" : ["js/skyvector.js"],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+
+  "browser_action" : {
+    "default_popup" : "popup.html",
+    "default_icon" : "img/icon-48.png"
+  },
+
+  "homepage_url": "http://jpr.pw/extensions/airportidexpander/Chrome/about.html",
+  "update_url": "http://jpr.pw/extensions/airportidexpander/Chrome/updates.xml",
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "geolocation"
+  ]
+}

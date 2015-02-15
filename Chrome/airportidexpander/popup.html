@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link href="popup.css" rel="stylesheet" type="text/css">
+  <script src="js/popup.js"></script>
+</head>
+<body>
+  <span class="title">
+    Airport ID Expander 2.2
+  </span><br>
+  <span>
+    <span class="setting-name">Never run on these domains:</span><br>
+    <textarea id="never-run" class="textbox" rows=5 placeholder="One per line, * is a wildcard:
+facebook.com
+*.local"></textarea>
+  </span><br>
+  <span>
+    <span class="setting-name">Don't match these ICAO ID's:</span><br>
+    <textarea id="ignore-airport-ids" class="textbox" rows=5 placeholder="One per line:
+KNOW
+SLED
+MOOD"></textarea>
+  </span><br>
+  <span>
+    <span class="setting-name">Groundspeed: <input type="text" id="groundspeed" class="number" placeholder="knots"/></span>
+  </span><br>
+  <span>
+    <span class="setting-name">Info style:</span>
+    <select id="info-style">
+      <option value="hovertext">Hover text</option>
+      <option value="inline-dist">Inline, with dist/time</option>
+      <option value="inline-nodist">Inline, no dist/time</option>
+    </select>
+    <span style="display:none;" class="reminder-text" id="link-site-custom-text">
+        Use %id, %lat, %lon as placeholders</span>
+    <input type="text" id="link-site-custom" style="display:none;">
+  </span><br>
+  <span id="advanced-toggle" class="toggle">Advanced<br></span>
+  <span class="advanced">
+    <span class="setting-name">Site for links (beta):</span><br>
+    <select id="link-site">
+      <option value="default">Default</option>
+      <option value="gcmap">GCMap</option>
+      <option value="skyvector-info">SkyVector info page</option>
+      <option value="skyvector-map">SkyVector map (beta)</option>
+      <option value="custom">Custom</option>
+    </select>
+    <span style="display:none;" class="reminder-text" id="link-site-custom-text">
+        Use %id, %lat, %lon as placeholders</span>
+    <input type="text" id="link-site-custom" style="display:none;">
+  </span>
+  <span class="advanced">
+    <span class="setting-name">Link color:</span><br>
+    <select id="link-color">
+      <option value="inherit">Surrounding Text</option>
+      <option value="page-default">Page Default</option>
+      <option value="black">Black</option>
+      <option value="blue">Blue</option>
+      <option value="red">Red</option>
+      <option value="yellow">Yellow</option>
+    </select>
+  </span>
+  <span class="advanced">
+    <span class="setting-name">Link decoration:</span><br>
+    <select id="link-decoration">
+      <option value="browser-default">Browser Default</option>
+      <option value="none">None</option>
+      <option value="bold">Bold</option>
+      <option value="underline">Underline</option>
+      <option value="bold-underline">Both</option>
+    </select>
+  </span>
+  <span class="advanced">
+    <span class="setting-name">Disable scroll listener on these domains:</span><br>
+    <textarea id="run-once" class="textbox" rows=5 placeholder="One per line, e.g. facebook.com"></textarea>
+  </span>
+  <span class="advanced">
+    <span class="setting-name"><input type="checkbox" value="debug" id="debug"><span class="setting-name">Enable debug logging</span></input></span><br>
+  </span>
+  <span class="advanced toggle" id="feedback">Feedback</span>
+  <span class="advanced toggle" id="donate-toggle">Donate</span>
+</body>
+</html>
